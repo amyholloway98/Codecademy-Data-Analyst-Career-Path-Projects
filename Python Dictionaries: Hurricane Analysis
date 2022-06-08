@@ -42,8 +42,6 @@ print(updated_damages)
 
 
 # 2 
-# Create a Table
-
 # Create and view the hurricanes dictionary
 hurricanes = {}
 
