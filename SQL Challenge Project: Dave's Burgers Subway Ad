@@ -1,0 +1,41 @@
+--What are the column names?
+SELECT *
+FROM orders
+LIMIT 10;
+
+--How recent is this data?
+SELECT DISTINCT order_date
+FROM orders
+ORDER BY order_date DESC;
+
+-- Instead of selecting all the columns using *, write a query that selects only the special_instructions column. Limit the result to 20 rows
+SELECT special_instructions
+FROM orders
+WHERE special_instructions IS NOT NULL
+LIMIT 20;
+
+-- Let’s go even further and sort the instructions in alphabetical order (A-Z)
+SELECT special_instructions
+FROM orders
+WHERE special_instructions IS NOT NULL
+ORDER BY special_instructions;
+
+-- Let’s search for special instructions that have the word ‘sauce’
+SELECT special_instructions
+FROM orders
+WHERE special_instructions LIKE '%sauce%';
+
+-- Let’s search for special instructions that have the word ‘door’
+SELECT special_instructions
+FROM orders
+WHERE special_instructions LIKE '%door%';
+
+-- Let’s search for special instructions that have the word ‘box’
+SELECT special_instructions
+FROM orders
+WHERE special_instructions LIKE '%box%';
+
+-- Instead of just returning the special instructions, also return their order ids. For more readability: rename id as ‘#’, rename special_instructions as ‘Notes’
+SELECT id AS '#', special_instructions AS 'Notes'
+FROM orders
+WHERE special_instructions LIKE '%box%';
