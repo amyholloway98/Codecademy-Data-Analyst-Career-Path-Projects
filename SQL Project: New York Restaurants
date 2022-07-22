@@ -1,55 +1,55 @@
-#What are the column names?
+--What are the column names?
 SELECT *
 FROM nomnom;
 
-#Find the distinct neighborhoods
+--Find the distinct neighborhoods
 SELECT DISTINCT neighborhood
 FROM nomnom;
 
-#Find distinct cuisines
+--Find distinct cuisines
 SELECT DISTINCT cuisine
 FROM nomnom;
 
-#Find all Chinese retaurants
+--Find all Chinese retaurants
 SELECT *
 FROM nomnom
 WHERE cuisine = 'Chinese';
 
-#Find all restaurants where the reviews are greater than 4
+--Find all restaurants where the reviews are greater than 4
 SELECT *
 FROM nomnom
 WHERE review > 4;
 
-#Find all Italian restaurants where thr price is $$$
+--Find all Italian restaurants where thr price is $$$
 SELECT *
 FROM nomnom
 WHERE cuisine = 'Italian'
 AND price = '$$$';
 
-#Someone can't remembe the name of the restaurant but they know it has the word meatball in it, find that restaurant
+--Someone can't remember the name of the restaurant but they know it has the word meatball in it, find that restaurant
 SELECT *
 FROM nomnom
 WHERE name LIKE '%meatball%';
 
-#Find all the close by spots in Midtown, Downtown or Chinatown
+--Find all the close by spots in Midtown, Downtown or Chinatown
 SELECT *
 FROM nomnom
 WHERE neighborhood = 'Midtown'
 OR neighborhood = 'Downtown'
 OR neighborhood = 'Chinatown';
 
-#Find the restaurants where the health grade is pending (empty values)
+--Find the restaurants where the health grade is pending (empty values)
 SELECT *
 FROM nomnom
 WHERE health IS NULL;
 
-#Create a top 10 restaurants list based on the reviews
+--Create a top 10 restaurants list based on the reviews
 SELECT *
 FROM nomnom
 ORDER BY review DESC
 LIMIT 10;
 
-#Use a CASE statement to change the rating system
+--Use a CASE statement to change the rating system
 SELECT name,
  CASE
   WHEN review > 4.5 THEN 'Extraordinary'
